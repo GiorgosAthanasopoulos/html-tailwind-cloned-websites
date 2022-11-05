@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="GiorgiosAthanasopoulos@Github.com" />
+    <meta
+      name="keywords"
+      content="monkeytype, monkey, type, typeracer, fast, keyboard"
+    />
+    <meta name="description" content="Monkeytype website clone" />
+    <title>Monkeytype</title>
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,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"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/1cdcb4c107.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-zinc-700 text-gray-300">
+    <noscript>Please enable javascript in order to run this app.</noscript>
+
+    <main class="m-8">
+      <div id="navbar" class="flex flex-row justify-between">
+        <div id="navbar-left" class="flex flex-row">
+          <a class="flex flex-row mr-1 hover:cursor-pointer" href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              style="isolation: isolate"
+              viewBox="-680 -1030 300 180"
+              class="w-10 h-10 fill-yellow-500"
+            >
+              <g>
+                <path
+                  d="M -430 -910 L -430 -910 C -424.481 -910 -420 -905.519 -420 -900 L -420 -900 C -420 -894.481 -424.481 -890 -430 -890 L -430 -890 C -435.519 -890 -440 -894.481 -440 -900 L -440 -900 C -440 -905.519 -435.519 -910 -430 -910 Z"
+                ></path>
+                <path
+                  d=" M -570 -910 L -510 -910 C -504.481 -910 -500 -905.519 -500 -900 L -500 -900 C -500 -894.481 -504.481 -890 -510 -890 L -570 -890 C -575.519 -890 -580 -894.481 -580 -900 L -580 -900 C -580 -905.519 -575.519 -910 -570 -910 Z "
+                ></path>
+                <path
+                  d="M -590 -970 L -590 -970 C -584.481 -970 -580 -965.519 -580 -960 L -580 -940 C -580 -934.481 -584.481 -930 -590 -930 L -590 -930 C -595.519 -930 -600 -934.481 -600 -940 L -600 -960 C -600 -965.519 -595.519 -970 -590 -970 Z"
+                ></path>
+                <path
+                  d=" M -639.991 -960.515 C -639.72 -976.836 -626.385 -990 -610 -990 L -610 -990 C -602.32 -990 -595.31 -987.108 -590 -982.355 C -584.69 -987.108 -577.68 -990 -570 -990 L -570 -990 C -553.615 -990 -540.28 -976.836 -540.009 -960.515 C -540.001 -960.345 -540 -960.172 -540 -960 L -540 -960 L -540 -940 C -540 -934.481 -544.481 -930 -550 -930 L -550 -930 C -555.519 -930 -560 -934.481 -560 -940 L -560 -960 L -560 -960 C -560 -965.519 -564.481 -970 -570 -970 C -575.519 -970 -580 -965.519 -580 -960 L -580 -960 L -580 -960 L -580 -940 C -580 -934.481 -584.481 -930 -590 -930 L -590 -930 C -595.519 -930 -600 -934.481 -600 -940 L -600 -960 L -600 -960 L -600 -960 L -600 -960 L -600 -960 L -600 -960 L -600 -960 L -600 -960 C -600 -965.519 -604.481 -970 -610 -970 C -615.519 -970 -620 -965.519 -620 -960 L -620 -960 L -620 -940 C -620 -934.481 -624.481 -930 -630 -930 L -630 -930 C -635.519 -930 -640 -934.481 -640 -940 L -640 -960 L -640 -960 C -640 -960.172 -639.996 -960.344 -639.991 -960.515 Z "
+                ></path>
+                <path
+                  d=" M -460 -930 L -460 -900 C -460 -894.481 -464.481 -890 -470 -890 L -470 -890 C -475.519 -890 -480 -894.481 -480 -900 L -480 -930 L -508.82 -930 C -514.99 -930 -520 -934.481 -520 -940 L -520 -940 C -520 -945.519 -514.99 -950 -508.82 -950 L -431.18 -950 C -425.01 -950 -420 -945.519 -420 -940 L -420 -940 C -420 -934.481 -425.01 -930 -431.18 -930 L -460 -930 Z "
+                ></path>
+                <path
+                  d="M -470 -990 L -430 -990 C -424.481 -990 -420 -985.519 -420 -980 L -420 -980 C -420 -974.481 -424.481 -970 -430 -970 L -470 -970 C -475.519 -970 -480 -974.481 -480 -980 L -480 -980 C -480 -985.519 -475.519 -990 -470 -990 Z"
+                ></path>
+                <path
+                  d=" M -630 -910 L -610 -910 C -604.481 -910 -600 -905.519 -600 -900 L -600 -900 C -600 -894.481 -604.481 -890 -610 -890 L -630 -890 C -635.519 -890 -640 -894.481 -640 -900 L -640 -900 C -640 -905.519 -635.519 -910 -630 -910 Z "
+                ></path>
+                <path
+                  d=" M -515 -990 L -510 -990 C -504.481 -990 -500 -985.519 -500 -980 L -500 -980 C -500 -974.481 -504.481 -970 -510 -970 L -515 -970 C -520.519 -970 -525 -974.481 -525 -980 L -525 -980 C -525 -985.519 -520.519 -990 -515 -990 Z "
+                ></path>
+                <path
+                  d=" M -660 -910 L -680 -910 L -680 -980 C -680 -1007.596 -657.596 -1030 -630 -1030 L -430 -1030 C -402.404 -1030 -380 -1007.596 -380 -980 L -380 -900 C -380 -872.404 -402.404 -850 -430 -850 L -630 -850 C -657.596 -850 -680 -872.404 -680 -900 L -680 -920 L -660 -920 L -660 -900 C -660 -883.443 -646.557 -870 -630 -870 L -430 -870 C -413.443 -870 -400 -883.443 -400 -900 L -400 -980 C -400 -996.557 -413.443 -1010 -430 -1010 L -630 -1010 C -646.557 -1010 -660 -996.557 -660 -980 L -660 -910 Z "
+                ></path>
+              </g>
+            </svg>
+            <p class="text-3xl font-bold ml-2">monkeytype</p>
+          </a>
+          <div class="icons mt-3 ml-3">
+            <i
+              class="fa-solid fa-keyboard mr-5 hover:opacity-100 opacity-50 hover:cursor-pointer"
+            ></i>
+            <i
+              class="fa-solid fa-crown mr-5 hover:opacity-100 opacity-50 hover:cursor-pointer"
+            ></i>
+            <a rel="noreferrer" href="https://monkeytype.com/about">
+              <i
+                class="fa-solid fa-info mr-5 hover:opacity-100 opacity-50 hover:cursor-pointer"
+              ></i>
+            </a>
+            <a rel="noreferrer" href="https://monkeytype.com/settings">
+              <i
+                class="fa-solid fa-gear hover:opacity-100 opacity-50 hover:cursor-pointer"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div id="navbar-right">
+          <div class="icons mt-3">
+            <i
+              class="fa-solid fa-bell mr-5 hover:opacity-100 opacity-50 hover:cursor-pointer"
+            ></i>
+            <i
+              class="fa-regular fa-user hover:opacity-100 opacity-50 hover:cursor-pointer"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div id="content" class="mb-10 mt-10">
+        <div id="options-bar" class="bg-zinc-800 mr-15 ml-15 p-3 flex flex-row">
+          <a
+            class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4 ml-10"
+            ><i class="fa-solid fa-at"></i> punctuation</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-hashtag"></i>numbers</a
+          >
+          <p class="opacity-50 mr-5">|</p>
+          <a class="hover:text-white hover:cursor-pointer mr-4 text-yellow-500"
+            ><i class="fa-solid fa-clock mr-1"></i>time</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-a mr-1"></i>words</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-quote-left mr-1"></i>quote</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-mountain mr-1"></i>zen</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-wrench mr-1"></i>custom</a
+          >
+          <p class="opacity-50 mr-5">|</p>
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            >15</a
+          >
+          <a class="hover:text-white text-yellow-500 hover:cursor-pointer mr-4"
+            >30</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            >60</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            >120</a
+          >
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer mr-4"
+            ><i class="fa-solid fa-screwdriver-wrench"></i
+          ></a>
+        </div>
+        <div id="language" class="text-center mt-5">
+          <a class="opacity-50 hover:opacity-100 hover:cursor-pointer"
+            ><i class="fa-solid fa-earth-americas mr-3"></i>english</a
+          >
+        </div>
+        <div
+          id="words-container"
+          class="flex flex-row flex-wrap justify-center item-center text-center w-full mt-3 mb-3"
+        >
+          <p class="text-yellow-500 animate-pulse text-2xl">|</p>
+        </div>
+        <div
+          id="restart-button"
+          class="text-center opacity-50 hover:opacity-100 hover:cursor-pointer mt-5"
+        >
+          <i class="fa-solid fa-rotate-right"></i>
+        </div>
+        <div id="hints mt-10" class="opacity-50 mt-24 text-center text-sm">
+          <p class="mb-3">
+            <a class="bg-white text-black opacity-50 p-1 text-center h-8 w-10"
+              >tab</a
+            >&nbsp;+&nbsp;<a
+              class="bg-white text-black opacity-50 p-1 text-center h-8 w-12"
+              >enter</a
+            >&nbsp;- restart test
+          </p>
+          <p>
+            <a class="bg-white text-black opacity-50 p-1 text-center h-8 w-10"
+              >esc</a
+            >&nbsp;or&nbsp;<a
+              class="bg-white text-black opacity-50 p-1 text-center h-8 w-12"
+              >ctrl</a
+            >&nbsp;+&nbsp;<a
+              class="bg-white text-black opacity-50 p-1 text-center h-8 w-12"
+              >shift</a
+            >&nbsp;+&nbsp;<a
+              class="bg-white text-black opacity-50 p-1 text-center h-8 w-8"
+              >p</a
+            >&nbsp;-&nbsp;command line
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="footer-left">
+          <div class="flex flex-row justify-between">
+            <div>
+              <a class="mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                ><i class="fa-solid fa-envelope mr-2"></i>Contact</a
+              >
+              <a class="mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                ><i class="fa-solid fa-circle-dollar-to-slot mr-2"></i
+                >Support</a
+              >
+              <a
+                class="mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                href="https://github.com/monkeytypegame/monkeytype"
+                rel="noreferrer"
+                target="_blank"
+                ><i class="fa-solid fa-code mr-2"></i>Github</a
+              >
+              <a
+                class="mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                href="https://www.discord.gg/monkeytype"
+                rel="noreferrer"
+                target="_blank"
+                ><i class="fa-brands fa-discord mr-2"></i>Discord</a
+              >
+            </div>
+            <a class="hover:opacity-100 opacity-50 hover:cursor-pointer"
+              ><i class="fa-solid fa-palette mr-2"></i>serika dark</a
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <div>
+              <a
+                class="mr-6 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                rel="noreferrer"
+                target="_blank"
+                href="https://twitter.com/monkeytypegame"
+                ><i class="fa-brands fa-twitter mr-2"></i>Twitter</a
+              >
+              <a
+                class="mr-8 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                rel="noreferrer"
+                target="_blank"
+                href="https://monkeytype.com/terms-of-service.html"
+                ><i class="fa-solid fa-file-contract mr-3"></i>Terms</a
+              >
+              <a
+                class="mr-1 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                rel="noreferrer"
+                target="_blank"
+                href="https://monkeytype.com/security-policy.html"
+                ><i class="fa-solid fa-shield-halved mr-4"></i>Security</a
+              >
+              <a
+                class="mr-4 opacity-50 hover:opacity-100 hover:cursor-pointer"
+                rel="noreferrer"
+                target="_blank"
+                href="https://monkeytype.com/privacy-policy.html"
+                ><i class="fa-solid fa-lock mr-2"></i>Security</a
+              >
+            </div>
+            <a class="mr-9 opacity-50 hover:opacity-100 hover:cursor-pointer"
+              ><i class="fa-solid fa-code-branch mr-2"></i>1.16.2</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      window.onload = () => {
+        const wordsContainer = document.getElementById("words-container")
+        const words = [
+          "out",
+          "point",
+          "person",
+          "set",
+          "without",
+          "old",
+          "the",
+          "they",
+          "when",
+          "good",
+          "head",
+          "own",
+          "way",
+          "because",
+          "give",
+          "life",
+          "stand",
+          "govern",
+          "play",
+          "old",
+          "or",
+          "both",
+          "against",
+          "hold",
+          "before",
+          "group",
+          "those",
+          "keep",
+          "day",
+          "here",
+          "govern",
+          "much",
+          "only",
+          "which",
+        ]
+        const classes = ["text-2xl", "opacity-50", "mr-2", "mb-2"]
+
+        words.forEach((word) => {
+          let el = document.createElement("p")
+          el.innerText = word
+          classes.forEach((_class) => {
+            if (word !== "out") el.classList.add(_class)
+            else {
+              if (_class !== "mb-2") el.classList.add(_class)
+            }
+          })
+          wordsContainer.appendChild(el)
+        })
+      }
+    </script>
+  </body>
+</html>

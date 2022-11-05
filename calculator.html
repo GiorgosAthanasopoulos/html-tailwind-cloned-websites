@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculator</title>
+    <meta name="author" content="GiorgosAthanasopoulos@Github.com" />
+    <meta name="keywords" content="calculator, math" />
+    <meta name="description" content="A simple calculator" />
+    <style>
+      /* TODO CALCULATOR SETTINGS */
+
+      .row,
+      #display {
+        width: 300px;
+        height: 75px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      #display,
+      .operator {
+        color: white;
+      }
+
+      #display {
+        background-color: black;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+
+        margin-bottom: 20px;
+
+        font-size: 20px;
+      }
+
+      .operator {
+        background-color: orange;
+      }
+
+      .digit,
+      .text {
+        color: black;
+        background-color: grey;
+      }
+
+      .digit {
+        opacity: 0.8;
+      }
+
+      .cell {
+        border: 1px solid black;
+        width: 75px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 5px;
+      }
+
+      .text {
+        width: 300px;
+      }
+
+      #calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-top: 30vh;
+      }
+
+      /* TODO GENERAL SETTINGS */
+
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      * {
+        user-select: none;
+        font-family: "Victor Mono";
+      }
+
+      /* TODO HOVER ANIMATIONS */
+
+      .cell:hover {
+        width: 85px;
+        height: 60px;
+      }
+
+      .text:hover {
+        width: 320px;
+      }
+
+      .text:hover,
+      .cell:hover {
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Please enable javascript in order to run this app.</noscript>
+
+    <div id="root">
+      <div id="calculator">
+        <div id="display"></div>
+        <div id="buttons">
+          <div class="row">
+            <div class="cell digit">7</div>
+            <div class="cell digit">8</div>
+            <div class="cell digit">9</div>
+            <div class="cell operator">/</div>
+          </div>
+          <div class="row">
+            <div class="cell digit">4</div>
+            <div class="cell digit">5</div>
+            <div class="cell digit">6</div>
+            <div class="cell operator">*</div>
+          </div>
+          <div class="row">
+            <div class="cell digit">1</div>
+            <div class="cell digit">2</div>
+            <div class="cell digit">3</div>
+            <div class="cell operator">+</div>
+          </div>
+          <div class="row">
+            <div class="cell digit">.</div>
+            <div class="cell digit">0</div>
+            <div class="cell digit">=</div>
+            <div class="cell operator">-</div>
+          </div>
+          <div class="row">
+            <div class="cell text">Clear</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function addButtonListeners() {
+        const buttons = document.querySelectorAll(".cell")
+        const display = document.getElementById("display")
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            switch (button.innerHTML) {
+              case "=":
+                try {
+                  // @ts-ignore
+                  display.innerText = eval(display.innerText)
+                } catch (SyntaxError) {
+                  // @ts-ignore
+                  display.innerText = "Error"
+                }
+                break
+              case "Clear":
+                // @ts-ignore
+                display.innerText = ""
+                break
+              default:
+                if (
+                  // @ts-ignore
+                  ["Infinity", "undefined", "Error"].indexOf(
+                    display.innerText
+                  ) !== -1
+                ) {
+                  // @ts-ignore
+                  display.innerText = ""
+                }
+
+                // @ts-ignore
+                display.innerText += button.innerHTML
+                break
+            }
+          })
+        })
+      }
+
+      addButtonListeners()
+    </script>
+  </body>
+</html>

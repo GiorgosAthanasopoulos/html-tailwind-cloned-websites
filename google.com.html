@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="GiorgosAthanasopoulos@Github.com" />
+    <meta name="keywords" content="google, search, engine" />
+    <meta name="description" content="Google Search Engine Clone" />
+    <title>Google</title>
+    <style>
+      /* TODO HEADER SETTINGS */
+
+      .text-link:hover {
+        text-decoration: underline;
+      }
+
+      .text-link {
+        margin-top: 10px;
+        text-decoration: none;
+      }
+
+      #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-right: 2vw;
+      }
+
+      #header * {
+        margin-left: 1vw;
+      }
+
+      #header i {
+        border: 1px solid transparent;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-width: 10px;
+      }
+
+      #header i:hover {
+        background-color: #2f3034;
+      }
+
+      #header button {
+        color: black;
+        background-color: #93baf9;
+        border: 0px;
+        width: 100px;
+        border-radius: 5%;
+      }
+
+      #header button:hover {
+        opacity: 0.9;
+      }
+
+      #header .link {
+        cursor: pointer;
+      }
+
+      #header .link:visited {
+        color: inherit;
+      }
+
+      #google-products-link {
+        text-decoration: none;
+      }
+
+      /* TODO FOOTER SETTINGS*/
+
+      #footer1 p {
+        opacity: 0.5;
+        cursor: text;
+        margin-left: 2vw;
+      }
+
+      #footers {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        background-color: #171717;
+      }
+
+      #footers hr {
+        opacity: 0.1;
+        width: 100%;
+        color: darkgrey;
+        background-color: darkgrey;
+        height: 0.5px;
+      }
+
+      #footers .text-link {
+        opacity: 0.5;
+        color: inherit;
+      }
+
+      #footers .text-link:visited {
+        color: inherit;
+      }
+
+      #footers .text-link:hover {
+        cursor: pointer;
+      }
+
+      #footer2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #footer2-1 {
+        margin-left: 10vw;
+      }
+
+      #footer2-2 {
+        margin-right: 10vw;
+      }
+
+      #footer2-1 *,
+      #footer2-2 * {
+        margin-right: 20px;
+      }
+
+      /* TODO MAIN SETTINGS */
+
+      #main * {
+        user-select: none;
+      }
+
+      #main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20vh;
+      }
+
+      #main img {
+        width: 272px;
+        height: 92px;
+        margin-bottom: 20px;
+      }
+
+      #search-bar {
+        border: 1px solid black;
+        border-radius: 25px;
+        padding: 10px;
+      }
+
+      #search-input {
+        height: 34px;
+        width: 368px;
+        outline: none;
+        background-color: inherit;
+        border: none;
+        color: white;
+      }
+
+      #search-bar:hover {
+        background-color: #303134;
+        cursor: text;
+      }
+
+      #search-buttons {
+        margin-top: 20px;
+        margin-left: 15vh;
+      }
+
+      #search-buttons button {
+        background-color: #303134;
+        color: white;
+        border: 0px solid black;
+        height: 36px;
+        width: 128;
+      }
+
+      #search-buttons button:hover {
+        cursor: pointer;
+        border: 1px solid grey;
+      }
+
+      #search-bar i {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      /* TODO GENERAL SETTINGS */
+
+      body {
+        width: 100%;
+        height: 100%;
+
+        background-color: #202124;
+        color: #ffffff;
+      }
+
+      * {
+        font-family: "Victor Mono", monospace;
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/a0f865ce3f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <noscript> Please enable javascript in order to run this app. </noscript>
+
+    <div id="root">
+      <div id="header">
+        <a
+          class="text-link link"
+          rel="noreferrer"
+          href="https://mail.google.com/mail/&ogbl"
+          >Gmail</a
+        >
+        <a
+          class="text-link link"
+          rel="noreferrer"
+          href="https://www.google.gr/imghp?hl=en&ogbl"
+          >Images</a
+        >
+        <a
+          title="Google Apps"
+          class="link"
+          id="google-products-link"
+          rel="noreferrer"
+          href="https://www.google.gr/intl/en/about/products"
+          ><i class="fa-solid fa-bars"></i
+        ></a>
+        <button class="link" onclick="signInButtonClicked()">Sign in</button>
+      </div>
+      <div id="main">
+        <div id="logo">
+          <img
+            src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+            alt="Google Logo"
+          />
+        </div>
+        <div id="search">
+          <form action="https://www.google.com/search" method="GET">
+            <div id="search-bar">
+              <i class="fa-solid fa-search"></i>
+              <input
+                type="text"
+                name="q"
+                id="search-input"
+                placeholder="Search Google or type a URL"
+              />
+              <i title="Search by voice" class="fa-solid fa-microphone"></i>
+              <i title="Search by image" class="fa-solid fa-camera"></i>
+            </div>
+            <div id="search-buttons">
+              <button type="submit" id="search-button">Google Search</button>
+              <button
+                type="button"
+                id="lucky-button"
+                onclick="luckyButtonClicked()"
+              >
+                I'm Feeling Lucky
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="footers">
+        <div id="footer1" class="footer">
+          <p>Greece</p>
+        </div>
+        <hr />
+        <div id="footer2" class="footer">
+          <div id="footer2-1">
+            <a
+              class="text-link"
+              rel="noreferrer"
+              href="https://about.google/?utm_source=google-GR&utm_medium=referral&utm_campaign=hp-footer&fg=1"
+              >About</a
+            >
+            <a
+              class="text-link"
+              rel="noreferrer"
+              href="https://www.google.com/intl/en_gr/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1"
+              >Advertising</a
+            >
+            <a
+              class="text-link"
+              rel="noreferrer"
+              href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1"
+              >Business</a
+            >
+            <a
+              class="text-link"
+              rel="noreferrer"
+              href="https://google.com/search/howsearchworks/?fg=1"
+              >How Search works</a
+            >
+          </div>
+          <div id="footer2-2">
+            <a class="text-link">Privacy</a>
+            <a class="text-link">Terms</a>
+            <a class="text-link">Settings</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function signInButtonClicked() {
+        window.open(
+          "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=GAZAmgQ"
+        )
+      }
+
+      function luckyButtonClicked() {
+        window.open("https://www.google.com/doodles")
+      }
+    </script>
+  </body>
+</html>
